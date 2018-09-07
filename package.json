@@ -1,16 +1,30 @@
 {
   "name": "react-angular-port",
   "version": "0.1.0",
+  "description": "Week 1 React Independent project",
   "private": true,
   "dependencies": {
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-scripts": "1.1.5"
   },
+  "author": "Matt Smith",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MattSmithereens/react-angular-port.git"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "webpack": "^3.4.0",
+    "webpack-dev-server": "^2.5.0"
   }
 }
