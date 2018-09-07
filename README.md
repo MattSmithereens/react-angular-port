@@ -6,7 +6,7 @@
 
 ## Description
 
-This app is a re-creation of the Epicodus Record Store example.  I chose this particular project because my pair and I never got a working MVP of the Tap Room (not to mention I had to go at it solo on day 2) and the other notable project that I did that week was an adventure game that became too unweildy because my pair and I took the wrong approach and created something unecessarily convoluted.  I know that the record store works, I understand the file structure and I will have something functional to reference. 
+This app is a re-creation of the [Epicodus Record Store]( https://github.com/MattSmithereens/album-store) example.  I chose this particular project because my pair and I never got a working MVP of the Tap Room (not to mention I had to go at it solo on day 2) and the other notable project that I did that week was an adventure game that became too unweildy because my pair and I took the wrong approach and created something unecessarily convoluted.  I know that the record store works, I understand the file structure and I will have something functional to reference. 
 
 ## Objectives
 
