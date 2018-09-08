@@ -13,6 +13,7 @@
   "author": "Matt Smith",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^2.6.1",
     "prop-types": "^15.5.10",
     "react": "^15.6.2",
     "react-dom": "^15.5.4",
