@@ -1,59 +1,45 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 function Nav() {
-  let navDivStyle = {
-    position: 'fixed',
-    width: '100%'
-  };
+    let navStyle = {
+        borderBottom: '2px lightgray solid',
+        position: 'absolute',
+        top: '0',
+        width: '100%',
+        height: '100px'
+    };
+    let imageStyle = {
+        width: '70px'
+    };
+    let imageDiv ={
+        display: 'inline-block',
+        verticalAlign: 'top',
+        margin: '5px',
+        padding: '5px',
+    };
+    let divStyle = {
+        display: 'inline-block',
+        verticalAlign: 'top',
+        margin: '5px',
+        padding: '5px',
+        float: 'right'
+    };
 
-  let imageDiv = {
-    display: 'inline-block'
-  };
-
-  let imageStyle = {
-    width: '150px'
-  };
-
-  let rightDivStyle = {
-    display: 'inline-block',
-    float: 'right',
-    width: '25%'
-  };
-
-  let centerDivStyle = {
-    width: '25%',
-    display: 'inline-block',
-    textAlign: 'center',
-    margin: '0 20%'
-  };
-
-  let linkEle = {
-    display: 'inline-block',
-    margin: '1%',
-    fontFamily: 'sans-serif',
-    color: '#FFF'
-  };
-
-  return(
-    <div style={navDivStyle}>
-      <div style={imageDiv}>
-        <img style={imageStyle} src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Tesla_Motors_Logo.svg/1280px-Tesla_Motors_Logo.svg.png' />
-      </div>
-      <div style={centerDivStyle}>
-        <h4 style={linkEle} >MODEL S</h4>
-        <h4 style={linkEle} >MODEL X</h4>
-        <h4 style={linkEle} >MODEL 3</h4>
-        <h4 style={linkEle} >ROADSTER</h4>
-        <h4 style={linkEle} >ENERGY</h4>
-      </div>
-      <div style={rightDivStyle}>
-        <h4 style={linkEle} >GET NEWSLETTER</h4>
-        <h4 style={linkEle} >SHOP</h4>
-        <h4 style={linkEle} >SIGN IN</h4>
-      </div>
-    </div>
-
-  );
+    return (
+        <div style={navStyle}>
+            <div style={imageDiv}>
+                <Link to='/'><img style={imageStyle} src="https://images.vexels.com/media/users/3/145609/isolated/preview/333e626ad54e31a81c17d882c1d8aa6b-cow-illustration-farm-by-vexels.png" /></Link>
+            </div>
+            <div style={divStyle}>
+                <Link to='/schedule'><h4>Schedule</h4></Link>
+            </div>
+            <div style={divStyle}>
+                <Link to='/produce'><h4>Produce</h4></Link>
+            </div>
+        </div>
+    );
 }
 
 export default Nav;
