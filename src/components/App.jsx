@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import Nav from './Nav';
 import Welcome from './Welcome';
 import ModelTitle from './ModelTitle';
@@ -6,8 +6,8 @@ import ModelTitle from './ModelTitle';
 function App(){
   return (
     <div>
-   <Nav/>
-   <Welcome/>
+      <Nav/>
+      <Welcome/>
     </div>
   );
 }

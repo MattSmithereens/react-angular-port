@@ -4,35 +4,35 @@ function Nav() {
   let navDivStyle = {
     position: 'fixed',
     width: '100%'
-  }
+  };
 
   let imageDiv = {
     display: 'inline-block'
-  }
+  };
 
   let imageStyle = {
     width: '150px'
-  }
+  };
 
   let rightDivStyle = {
     display: 'inline-block',
     float: 'right',
     width: '25%'
-  }
+  };
 
   let centerDivStyle = {
     width: '25%',
     display: 'inline-block',
     textAlign: 'center',
     margin: '0 20%'
-  }
+  };
 
   let linkEle = {
     display: 'inline-block',
     margin: '1%',
     fontFamily: 'sans-serif',
     color: '#FFF'
-  }
+  };
 
   return(
     <div style={navDivStyle}>

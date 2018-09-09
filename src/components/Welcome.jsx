@@ -7,11 +7,11 @@ function Welcome() {
     backgroundImage: 'url(\'https://www.tesla.com/sites/default/files/images/homepage/20180710/ms/homepage-models.jpg?20180712a\')',
     backgroundSize: 'cover',
     backgroundAttachment: 'fixed'
-  }
+  };
 
   return(
     <div style={welcomeDivStyle}>
-      <ModelTitle/>
+      // <ModelTitle/>
     </div>
   );
 }
