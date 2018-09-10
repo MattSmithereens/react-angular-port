@@ -7,11 +7,9 @@ function Records(records) {
     fontFamily: 'sans-serif',
     border: '1px solid grey',
     width: '50%',
-    display: 'inline-block',
-    margin: '1.5%',
+    margin: '1.25%',
     padding: '10px',
     verticalAlign: 'top',
-    height: '10%',
     overflow: 'auto'
   };
 

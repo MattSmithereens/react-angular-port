@@ -20,7 +20,7 @@ function RecordsList() {
     fontFamily: 'sans-serif',
     textAlign: 'left',
     height: '100%',
-    padding: '20px'
+    padding: '75px'
   };
 
   return(
