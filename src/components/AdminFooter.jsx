@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 
-function Admin() {
+function AdminFooter() {
   let navStyle = {
     fontFamily: 'Poppins, sans-serif',
     borderTop: '2px lightgray solid',
@@ -21,9 +21,9 @@ function Admin() {
 
   return (
     <div style={navStyle}>
-      <Link to='/'>Admin</Link>
+      <Link to='/admin'>Admin</Link>
     </div>
   );
 }
 
-export default Admin;
+export default AdminFooter;
