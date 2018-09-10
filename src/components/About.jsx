@@ -4,13 +4,8 @@ import PropTypes from 'prop-types';
 function About(market) {
     let divStyle = {
         fontFamily: 'sans-serif',
-        // border: '3px solid grey',
-        //width: '80%',
-        // display: 'inline-block',
-        // margin: '1.5%',
         padding: '100px',
         verticalAlign: 'top',
-        // minHeight: '200px',
 
     };
     return(
