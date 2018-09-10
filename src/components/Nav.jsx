@@ -8,7 +8,8 @@ function Nav() {
     position: 'absolute',
     top: '0',
     width: '100%',
-    height: '100px'
+    height: '100px',
+    textDecoration: 'none'
   };
   let headerDiv ={
     display: 'inline-block',
