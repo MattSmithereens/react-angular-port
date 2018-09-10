@@ -19,7 +19,7 @@ function RecordsList() {
   let recordsList = {
     fontFamily: 'sans-serif',
     textAlign: 'left',
-    height: '100%',
+    height: '75%',
     padding: '75px'
   };
 

@@ -1,14 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+//@import url('https://fonts.googleapis.com/css?family=Poppins');
+
 
 
 function Admin() {
   let navStyle = {
-    fontFamily: 'sans-serif',
+    fontFamily: 'Poppins, sans-serif',
     borderTop: '2px lightgray solid',
-    top: '0',
     width: '100%',
-    verticalAlign: 'bottom'
+    verticalAlign: 'bottom',
+    backgroundColor: '#9fc5db',
+    position: 'fixed',
+    bottom: '0',
+    height: '60px',
+    padding: '15px'
+
   };
 
 
