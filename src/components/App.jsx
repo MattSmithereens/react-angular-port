@@ -3,6 +3,7 @@ import Nav from './Nav';
 import Welcome from './Welcome';
 import RecordsList from './RecordsList';
 import About from './About';
+import Admin from './AdminFooter';
 import { Switch, Route } from 'react-router-dom';
 
 function App(){
@@ -15,6 +16,7 @@ function App(){
         <Route path='/about' component={About} />
         <Route path='/marketplace' component={RecordsList} />
       </Switch>
+      <Admin/>
     </div>
   );
 }
