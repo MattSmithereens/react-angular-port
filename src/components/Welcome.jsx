@@ -3,11 +3,10 @@ import React from 'react';
 function Welcome() {
     let welcomeStyle = {
         fontFamily: 'sans-serif',
-        fontSize: '20px',
+        fontSize: '15px',
         padding: '75px',
         marginTop: '0',
         margin: '0 auto',
-        width: '100%'
     };
 
     return (
