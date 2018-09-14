@@ -6,18 +6,18 @@ function RecordsList(props) {
 
   const availableRecords = [
     {
-			artist: 'Black Sabbath',
-			title: 'Paranoid',
+      artist: 'Black Sabbath',
+      title: 'Paranoid',
       description: 'Paranoid description'
     },
     {
-			artist: 'Iron Maiden',
-			title: 'Powerslave',
+      artist: 'Iron Maiden',
+      title: 'Powerslave',
       description: 'Wanna start a fight?  Say this is better than Killers'
     },
     {
-			artist: 'Unruh',
-			title: 'Misery Strengthened Faith',
+      artist: 'Unruh',
+      title: 'Misery Strengthened Faith',
       description: 'Unruh description'
     }
   ];

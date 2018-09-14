@@ -25,21 +25,21 @@ function NewRecordForm(props) {
   return (
     <div style={formStyle}>
       <form onSubmit={handleNewRecordFormSubmission}>
-      <input
-        type='text'
-        id='artist'
-        placeholder='Record Artist(s)'
-        ref={(input) => {_artist = input;}}/>
-      <input
-        type='text'
-        id='title'
-        placeholder='Record Title'
-        ref={(input) => {_title = input;}}/>
-      <textarea
-        id='description'
-        placeholder='Record Description'
-        ref={(textarea) => {_description = textarea;}}/>
-      <button type='submit'>Add Record</button>
+        <input
+          type='text'
+          id='artist'
+          placeholder='Record Artist(s)'
+          ref={(input) => {_artist = input;}}/>
+        <input
+          type='text'
+          id='title'
+          placeholder='Record Title'
+          ref={(input) => {_title = input;}}/>
+        <textarea
+          id='description'
+          placeholder='Record Description'
+          ref={(textarea) => {_description = textarea;}}/>
+        <button type='submit'>Add Record</button>
       </form>
     </div>
   );
