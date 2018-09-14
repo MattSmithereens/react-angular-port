@@ -12,9 +12,9 @@ function NewRecordForm(props) {
     _artist.value = '';
     _title.value = '';
     _description.value = '';
-  }  
+  }
 
-  let adminStyle = { //add additional styling later
+  let formStyle = { //add additional styling later
     fontFamily: 'sans-serif',
     fontSize: '15px',
     padding: '75px',
