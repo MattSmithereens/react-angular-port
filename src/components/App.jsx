@@ -7,6 +7,7 @@ import AdminFooter from './AdminFooter';
 import Admin from './Admin';
 import { Switch, Route } from 'react-router-dom';
 import NewRecordControl from './NewRecordControl';
+import NewRecordForm from './NewRecordForm';
 import { v4 } from 'uuid';
 
 function App(){
@@ -18,7 +19,7 @@ function App(){
         <Route exact path='/' component={Welcome} />
         <Route path='/about' component={About} />
         <Route path='/marketplace' component={RecordsList} />
-        <Route path='/admin' component={Admin} />
+        <Route path='/admin' component={NewRecordForm} />
       </Switch>
       <AdminFooter/>
     </div>
