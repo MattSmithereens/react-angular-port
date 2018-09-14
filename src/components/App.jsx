@@ -61,7 +61,7 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={Welcome} />
           <Route path='/about' component={About} />
-          <Route path='/marketplace' component={RecordsList} />
+          <Route path='/marketplace' render={()=><RecordsList recordsList={this.state.masterRecordsList} />} />
           <Route path='/admin' component={NewRecordForm} />
         </Switch>
         <AdminFooter/>

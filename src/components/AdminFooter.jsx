@@ -1,8 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-//@import url('https://fonts.googleapis.com/css?family=Poppins');
-
-
+import { Route, Link } from 'react-router-dom';
 
 function AdminFooter() {
   let navStyle = {
@@ -21,7 +18,8 @@ function AdminFooter() {
 
   return (
     <div style={navStyle}>
-      <Link to='/admin'>Admin</Link>
+      <Route path='/newrecord' render={()=><NewRecordControl onNewRecordCreation={this.handleAddingNewRecordToList} />} />
+      //<Link to='/admin'>Admin</Link>
     </div>
   );
 }
