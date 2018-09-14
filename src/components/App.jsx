@@ -6,6 +6,8 @@ import About from './About';
 import AdminFooter from './AdminFooter';
 import Admin from './Admin';
 import { Switch, Route } from 'react-router-dom';
+import NewRecordControl from './NewRecordControl';
+import { v4 } from 'uuid';
 
 function App(){
 
