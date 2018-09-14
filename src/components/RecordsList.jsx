@@ -1,13 +1,19 @@
 import React from 'react';
 import Records from './Records';
+import PropTypes from 'prop-types';
 
-function RecordsList() {
+function RecordsList(props) {
 
   const availableRecords = [
     {
 			artist: 'Black Sabbath',
 			title: 'Paranoid',
       description: 'Paranoid description'
+    },
+    {
+			artist: 'Iron Maiden',
+			title: 'Powerslave',
+      description: 'Wanna start a fight?  Say this is better than Killers'
     },
     {
 			artist: 'Unruh',

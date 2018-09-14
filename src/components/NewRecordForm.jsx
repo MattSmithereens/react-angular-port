@@ -1,7 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function NewRecordForm() {
-  let adminStyle = {
+function NewRecordForm(props) {
+  let _artist = null;
+  let _title = null;
+  let _description = null;
+
+  function handleNewRecordFormSubmission(event) {
+    event.preventDefault();
+    props.onNewRecordCreation({artist: _artist.value, title: _title.value, description: _description.value, timeOpen: new Moment()});
+    _artist.value = '';
+    _title.value = '';
+    _description.value = '';
+  }  
+
+  let adminStyle = { //add additional styling later
     fontFamily: 'sans-serif',
     fontSize: '15px',
     padding: '75px',
@@ -10,10 +23,30 @@ function NewRecordForm() {
   };
 
   return (
-    <div  style={formStyle} >
-      <h1>Input not functional yet</h1>
+    <div>
+      <form onSubmit={handleNewRecordFormSubmission}>
+        <input
+          type='text'
+          id='artist'
+          placeholder='Record Artist(s)'
+          ref={(input) => {_artist = input;}}/>
+        <input
+          type='text'
+          id='title'
+          placeholder='Record Title'
+          ref={(input) => {_title = input;}}/>
+        <textarea
+          id='description'
+          placeholder='Record Description'
+          ref={(textarea) => {_description = textarea;}}/>
+        <button type='submit'>Add Record</button>
+      </form>
     </div>
   );
 }
+
+NewRecordForm.propTypes = {
+  onNewRecordCreation: PropTypes.func
+};
 
 export default NewRecordForm;
