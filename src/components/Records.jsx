@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Records(records) {
+function Records(props) {
 
   let divStyle = {
     fontFamily: 'sans-serif',
@@ -13,14 +13,25 @@ function Records(records) {
     overflow: 'auto'
   };
 
-  return(
+  const recordInformation =
     <div style={divStyle}>
-      <h3>{records.artist}</h3>
-      <p>{records.title}</p>
-      <p>{records.description}</p>
-    </div>
-  );
+      <h3>{props.artist} - {props.title}</h3>
+    </div>;
+  if (props.currentRouterPath === '/marketplace'){
+    return (
+      <div onClick={() => {props.onRecordSelection(props.recordId);}}>
+        {recordInformation}
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        {recordInformation}
+      </div>
+    );
+  }
 }
+
 
 Records.propTypes = {
   artist: PropTypes.string,

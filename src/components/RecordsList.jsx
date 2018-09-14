@@ -3,25 +3,6 @@ import Records from './Records';
 import PropTypes from 'prop-types';
 
 function RecordsList(props) {
-
-  const availableRecords = [
-    {
-      artist: 'Black Sabbath',
-      title: 'Paranoid',
-      description: 'Paranoid description'
-    },
-    {
-      artist: 'Iron Maiden',
-      title: 'Powerslave',
-      description: 'Wanna start a fight?  Say this is better than Killers'
-    },
-    {
-      artist: 'Unruh',
-      title: 'Misery Strengthened Faith',
-      description: 'Unruh description'
-    }
-  ];
-
   let recordsList = {
     fontFamily: 'sans-serif',
     textAlign: 'left',
@@ -29,18 +10,27 @@ function RecordsList(props) {
     padding: '75px'
   };
 
-  return(
-    <div style={recordsList}>
-      {availableRecords.map((records, index) =>
-        <Records
-          artist = {records.artist}
-          title = {records.title}
-          description = {records.description}
-          key = {index}
-        />
-      )}
+  return (
+    <div>
+      <hr/>
+      {Object.keys(props.recordsList).map(function(recordId) {
+        var record = props.recordsList[recordId];
+        return <Record names={record.names}
+          location={record.location}
+          issue={record.issue}
+          currentRouterPath={props.currentRouterPath}
+          key={recordId}
+          recordId={recordId}
+          onRecordSelection={props.onRecordSelection}/>;
+      })}
     </div>
   );
 }
+
+RecordsList.propTypes = {
+  recordsList: PropTypes.object,
+  currentRouterPath: PropTypes.string,
+  onRecordSelection: PropTypes.func
+};
 
 export default RecordsList;

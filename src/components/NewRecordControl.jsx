@@ -19,7 +19,7 @@ class NewRecordControl extends React.Component {
   render(){
     let currentlyVisibleContent = null;
     if (this.state.formVisibleOnPage){
-      currentlyVisibleContent = <NewTicketForm onNewTicketCreation={this.props.onNewTicketCreation}/>;
+      currentlyVisibleContent = <NewRecordForm onNewRecordCreation={this.props.onNewRecordCreation}/>;
     } else {
       currentlyVisibleContent = <ConfirmationQuestions onTroubleshootingConfirmation={this.handleTroubleshootingConfirmation}/>;
     }
@@ -35,4 +35,4 @@ NewRecordForm.propTypes = {
   onNewRecordCreation: PropTypes.func
 };
 
-export default NewRecordForm;
+export default NewRecordControl;

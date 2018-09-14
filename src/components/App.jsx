@@ -10,20 +10,64 @@ import NewRecordControl from './NewRecordControl';
 import NewRecordForm from './NewRecordForm';
 import { v4 } from 'uuid';
 
-function App(){
+class App extends React.Component {
 
-  return (
-    <div>
-      <Nav/>
-      <Switch>
-        <Route exact path='/' component={Welcome} />
-        <Route path='/about' component={About} />
-        <Route path='/marketplace' component={RecordsList} />
-        <Route path='/admin' component={NewRecordForm} />
-      </Switch>
-      <AdminFooter/>
-    </div>
-  );
+  constructor(props) {
+    super(props);
+    this.state = {
+      masterRecordList: {},
+      selectedRecord: null
+    };
+    this.handleAddingNewRecordToList = this.handleAddingNewRecordToList.bind(this);
+    this.handleChangingSelectedRecord = this.handleChangingSelectedRecord.bind(this);
+  }
+
+  componentDidMount() {
+    this.waitTimeUpdateTimer = setInterval(() =>
+      this.updateRecordElapsedWaitTime(),
+    60000
+    );
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.waitTimeUpdateTimer);
+  }
+
+  updateRecordElapsedWaitTime() {
+    var newMasterRecordList = Object.assign({}, this.state.masterRecordList);
+    Object.keys(newMasterRecordList).forEach(recordId => {
+      newMasterRecordList[recordId].formattedWaitTime = (newMasterRecordList[recordId].timeOpen).fromNow(true);
+    });
+    this.setState({masterRecordList: newMasterRecordList});
+  }
+
+  handleAddingNewRecordToList(newRecord){
+    var newRecordId = v4();
+    var newMasterRecordList = Object.assign({}, this.state.masterRecordList, {
+      [newRecordId]: newRecord
+    });
+    newMasterRecordList[newRecordId].formattedWaitTime = newMasterRecordList[newRecordId].timeOpen.fromNow(true);
+    this.setState({masterRecordList: newMasterRecordList});
+  }
+
+  handleChangingSelectedRecord(recordId){
+    this.setState({selectedRecord: recordId});
+  }
+
+  render(){
+    return (
+      <div>
+        <Nav/>
+        <Switch>
+          <Route exact path='/' component={Welcome} />
+          <Route path='/about' component={About} />
+          <Route path='/marketplace' component={RecordsList} />
+          <Route path='/admin' component={NewRecordForm} />
+        </Switch>
+        <AdminFooter/>
+      </div>
+    );
+  }
 }
 
 export default App;
