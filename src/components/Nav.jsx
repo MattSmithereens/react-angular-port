@@ -36,14 +36,6 @@ function Nav() {
       <div style={divStyle}>
         <Link to='/about'><h4>About</h4></Link>
       </div>
-
-
-      <div style={divStyle}>
-        <Link to='/admin'><h4>Admin</h4></Link>
-        <p>REMOVE ME LATER</p>
-      </div>
-
-
     </div>
   );
 }
