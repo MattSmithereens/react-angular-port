@@ -1,4 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import RecordsList from './RecordsList';
+import RecordDetail from './RecordDetail';
 
 function Admin() {
   let adminStyle = {

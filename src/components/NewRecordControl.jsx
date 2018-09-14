@@ -1,9 +1,12 @@
 import React from 'react';
-import NewRecordForm fom './NewRecordForm';
+import NewRecordForm from './NewRecordForm';
 import PropTypes from 'prop-types';
 
 class NewRecordControl extends React.Component {
-  
+
+  constructor(props) {
+    super(props);
+  }
 }
 
 NewRecordForm.propTypes = {
