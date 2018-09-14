@@ -8,6 +8,8 @@ import Admin from './Admin';
 import { Switch, Route } from 'react-router-dom';
 import NewRecordControl from './NewRecordControl';
 import NewRecordForm from './NewRecordForm';
+import Error404 from './Error404';
+import Moment from 'moment';
 import { v4 } from 'uuid';
 
 class App extends React.Component {
@@ -63,6 +65,7 @@ class App extends React.Component {
           <Route path='/about' component={About} />
           <Route path='/marketplace' render={()=><RecordsList recordsList={this.state.masterRecordsList} />} />
           <Route path='/admin' component={NewRecordForm} />
+          <Route component={Error404} />
         </Switch>
         <AdminFooter/>
       </div>
