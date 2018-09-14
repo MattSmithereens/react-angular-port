@@ -3,7 +3,7 @@ import Records from './Records';
 import PropTypes from 'prop-types';
 
 function RecordsList(props) {
-  let recordsList = {
+  let recordsListStyle = {
     fontFamily: 'sans-serif',
     textAlign: 'left',
     height: '75%',
@@ -11,7 +11,7 @@ function RecordsList(props) {
   };
 
   return (
-    <div>
+    <div style={recordsListStyle}>
       <hr/>
       {Object.keys(props.recordsList).map(function(recordId) {
         var record = props.recordsList[recordId];

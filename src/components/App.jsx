@@ -65,6 +65,16 @@ class App extends React.Component {
           <Route path='/about' component={About} />
           <Route path='/marketplace' render={()=><RecordsList recordsList={this.state.masterRecordsList} />} />
           <Route path='/admin' component={NewRecordForm} />
+
+
+          <Route exact path='/newrecordlist' render={()=><RecordsList recordsList={this.state.masterRecordList} />} />
+          <Route path='/newrecordlist2' render={()=><NewRecordControl onNewRecordCreation={this.handleAddingNewRecordToList} />} />
+          <Route path='/addnew' render={(props)=><Admin recordsList={this.state.masterRecordList} currentRouterPath={props.location.pathname}
+            onRecordSelection={this.handleChangingSelectedRecord}
+            selectedRecord={this.state.selectedRecord}/>} />
+
+
+
           <Route component={Error404} />
         </Switch>
         <AdminFooter/>
