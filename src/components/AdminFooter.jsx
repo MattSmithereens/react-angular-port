@@ -18,8 +18,7 @@ function AdminFooter() {
 
   return (
     <div style={navStyle}>
-      <Route path='/newrecord' render={()=><NewRecordControl onNewRecordCreation={this.handleAddingNewRecordToList} />} />
-      //<Link to='/admin'>Admin</Link>
+      <Link to='/admin'>Admin</Link>
     </div>
   );
 }

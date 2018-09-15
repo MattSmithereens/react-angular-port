@@ -1,5 +1,6 @@
 import React from 'react';
 import NewRecordForm from './NewRecordForm';
+import ConfirmationQuestions from './ConfirmationQuestions';
 import PropTypes from 'prop-types';
 
 class NewRecordControl extends React.Component {
