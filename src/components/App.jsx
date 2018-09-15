@@ -69,9 +69,7 @@ class App extends React.Component {
 
           <Route exact path='/newrecordlist' render={()=><RecordsList recordsList={this.state.masterRecordList} />} />
           <Route path='/newrecordlist2' render={()=><NewRecordControl onNewRecordCreation={this.handleAddingNewRecordToList} />} />
-          <Route path='/addnew' render={(props)=><Admin recordsList={this.state.masterRecordList} currentRouterPath={props.location.pathname}
-            onRecordSelection={this.handleChangingSelectedRecord}
-            selectedRecord={this.state.selectedRecord}/>} />
+          <Route path='/addnew' render={(props)=><Admin recordsList={this.state.masterRecordList} currentRouterPath={props.location.pathname} onRecordSelection={this.handleChangingSelectedRecord} selectedRecord={this.state.selectedRecord}/>} />
 
 
 
