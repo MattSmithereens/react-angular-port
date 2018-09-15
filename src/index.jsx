@@ -3,9 +3,6 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import { AppContainer } from 'react-hot-loader';
 import { HashRouter } from 'react-router-dom';
-//import './components/Styles.css';
-//import 'bootstrap/dist/css/bootstrap.min.css'; it don't like this at all...
-
 
 const render = (Component) => {
   ReactDOM.render(
