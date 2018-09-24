@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Moment from 'moment';
 
 function NewRecordForm(props) {
   let _artist = null;
@@ -9,7 +8,7 @@ function NewRecordForm(props) {
 
   function handleNewRecordFormSubmission(event) {
     event.preventDefault();
-    props.onNewRecordCreation({artist: _artist.value, title: _title.value, description: _description.value,  timeOpen: new Moment()});
+    props.onNewRecordCreation({artist: _artist.value, title: _title.value, description: _description.value});
     _artist.value = '';
     _title.value = '';
     _description.value = '';
