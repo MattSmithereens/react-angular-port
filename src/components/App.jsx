@@ -9,7 +9,6 @@ import { Switch, Route } from 'react-router-dom';
 import NewRecordControl from './NewRecordControl';
 import NewRecordForm from './NewRecordForm';
 import Error404 from './Error404';
-import Moment from 'moment';
 import { v4 } from 'uuid';
 
 class App extends React.Component {
@@ -24,24 +23,24 @@ class App extends React.Component {
     this.handleChangingSelectedRecord = this.handleChangingSelectedRecord.bind(this);
   }
 
-  componentDidMount() {
-    this.waitTimeUpdateTimer = setInterval(() =>
-      this.updateRecordElapsedWaitTime(),
-    60000
-    );
-  }
+  // componentDidMount() {
+  //   this.waitTimeUpdateTimer = setInterval(() =>
+  //     this.updateRecordElapsedWaitTime(),
+  //   60000
+  //   );
+  // }
 
-  componentWillUnmount(){
-    clearInterval(this.waitTimeUpdateTimer);
-  }
+  // componentWillUnmount(){
+  //   clearInterval(this.waitTimeUpdateTimer);
+  // }
 
-  updateRecordElapsedWaitTime() {
-    var newMasterRecordList = Object.assign({}, this.state.masterRecordList);
-    Object.keys(newMasterRecordList).forEach(recordId => {
-      newMasterRecordList[recordId].formattedWaitTime = (newMasterRecordList[recordId].timeOpen).fromNow(true);
-    });
-    this.setState({masterRecordList: newMasterRecordList});
-  }
+  // updateRecordElapsedWaitTime() {
+  //   var newMasterRecordList = Object.assign({}, this.state.masterRecordList);
+  //   Object.keys(newMasterRecordList).forEach(recordId => {
+  //     newMasterRecordList[recordId].formattedWaitTime = (newMasterRecordList[recordId].timeOpen).fromNow(true);
+  //   });
+  //   this.setState({masterRecordList: newMasterRecordList});
+  // }
 
   handleAddingNewRecordToList(newRecord){
     var newRecordId = v4();

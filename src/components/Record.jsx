@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Records(props) {
+function Record(props) {
 
   let divStyle = {
     fontFamily: 'sans-serif',
@@ -33,10 +33,10 @@ function Records(props) {
 }
 
 
-Records.propTypes = {
+Record.propTypes = {
   artist: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string
 };
 
-export default Records;
+export default Record;

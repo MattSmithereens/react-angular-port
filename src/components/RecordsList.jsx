@@ -1,5 +1,5 @@
 import React from 'react';
-import Records from './Records';
+import Record from './Record';
 import PropTypes from 'prop-types';
 
 function RecordsList(props) {
@@ -13,11 +13,13 @@ function RecordsList(props) {
   return (
     <div style={recordsListStyle}>
       <hr/>
+      console.log(props);
+      
       {Object.keys(props.recordsList).map(function(recordId) {
         var record = props.recordsList[recordId];
-        return <Record names={record.names}
-          location={record.location}
-          issue={record.issue}
+        return <Record artist={record.artist}
+          ltitle={record.title}
+          description={record.description}
           currentRouterPath={props.currentRouterPath}
           key={recordId}
           recordId={recordId}
