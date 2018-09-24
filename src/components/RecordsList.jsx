@@ -13,8 +13,6 @@ function RecordsList(props) {
   return (
     <div style={recordsListStyle}>
       <hr/>
-      console.log(props);
-      
       {Object.keys(props.recordsList).map(function(recordId) {
         var record = props.recordsList[recordId];
         return <Record artist={record.artist}

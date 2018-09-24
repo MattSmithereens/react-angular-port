@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Moment from 'moment';
 
 function NewRecordForm(props) {
   let _artist = null;
@@ -8,7 +9,7 @@ function NewRecordForm(props) {
 
   function handleNewRecordFormSubmission(event) {
     event.preventDefault();
-    props.onNewRecordCreation({artist: _artist.value, title: _title.value, description: _description.value});
+    props.onNewRecordCreation({artist: _artist.value, title: _title.value, description: _description.value,  timeOpen: new Moment()});
     _artist.value = '';
     _title.value = '';
     _description.value = '';
@@ -16,9 +17,8 @@ function NewRecordForm(props) {
 
   let formStyle = { //add additional styling later
     fontFamily: 'sans-serif',
-    fontSize: '15px',
+    fontSize: '25px',
     padding: '75px',
-    marginTop: '0',
     margin: '0 auto',
   };
 
@@ -29,16 +29,16 @@ function NewRecordForm(props) {
           type='text'
           id='artist'
           placeholder='Record Artist(s)'
-          ref={(input) => {_artist = input;}}/>
+          ref={(input) => {_artist = input;}}/><br /><br />
         <input
           type='text'
           id='title'
           placeholder='Record Title'
-          ref={(input) => {_title = input;}}/>
+          ref={(input) => {_title = input;}}/><br /><br />
         <textarea
           id='description'
           placeholder='Record Description'
-          ref={(textarea) => {_description = textarea;}}/>
+          ref={(textarea) => {_description = textarea;}}/><br /><br />
         <button type='submit'>Add Record</button>
       </form>
     </div>

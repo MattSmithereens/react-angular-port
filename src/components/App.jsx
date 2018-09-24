@@ -23,24 +23,24 @@ class App extends React.Component {
     this.handleChangingSelectedRecord = this.handleChangingSelectedRecord.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.waitTimeUpdateTimer = setInterval(() =>
-  //     this.updateRecordElapsedWaitTime(),
-  //   60000
-  //   );
-  // }
+  componentDidMount() {
+    this.waitTimeUpdateTimer = setInterval(() =>
+      this.updateRecordElapsedWaitTime(),
+    60000
+    );
+  }
 
-  // componentWillUnmount(){
-  //   clearInterval(this.waitTimeUpdateTimer);
-  // }
+  componentWillUnmount(){
+    clearInterval(this.waitTimeUpdateTimer);
+  }
 
-  // updateRecordElapsedWaitTime() {
-  //   var newMasterRecordList = Object.assign({}, this.state.masterRecordList);
-  //   Object.keys(newMasterRecordList).forEach(recordId => {
-  //     newMasterRecordList[recordId].formattedWaitTime = (newMasterRecordList[recordId].timeOpen).fromNow(true);
-  //   });
-  //   this.setState({masterRecordList: newMasterRecordList});
-  // }
+  updateRecordElapsedWaitTime() {
+    var newMasterRecordList = Object.assign({}, this.state.masterRecordList);
+    Object.keys(newMasterRecordList).forEach(recordId => {
+      newMasterRecordList[recordId].formattedWaitTime = (newMasterRecordList[recordId].timeOpen).fromNow(true);
+    });
+    this.setState({masterRecordList: newMasterRecordList});
+  }
 
   handleAddingNewRecordToList(newRecord){
     var newRecordId = v4();
@@ -62,12 +62,10 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={Welcome} />
           <Route path='/about' component={About} />
-          <Route path='/marketplace' render={()=><RecordsList recordsList={this.state.masterRecordsList} />} />
-          <Route path='/admin' component={NewRecordForm} />
+          <Route path='/admin-archive' component={NewRecordForm} onNewRecordCreation={this.handleAddingNewRecordToList}/>
+          <Route exact path='/marketplace' render={()=><RecordsList recordsList={this.state.masterRecordList} />} />
 
-
-          <Route exact path='/newrecordlist' render={()=><RecordsList recordsList={this.state.masterRecordList} />} />
-          <Route path='/newrecordlist2' render={()=><NewRecordControl onNewRecordCreation={this.handleAddingNewRecordToList} />} />
+          <Route path='/admin' render={()=><NewRecordControl onNewRecordCreation={this.handleAddingNewRecordToList} />} />
           <Route path='/addnew' render={(props)=><Admin recordsList={this.state.masterRecordList} currentRouterPath={props.location.pathname} onRecordSelection={this.handleChangingSelectedRecord} selectedRecord={this.state.selectedRecord}/>} />
 
 

@@ -17,7 +17,7 @@ function Record(props) {
     <div style={divStyle}>
       <h3>{props.artist} - {props.title}</h3>
     </div>;
-  if (props.currentRouterPath === '/marketplace'){
+  if (props.currentRouterPath === '/admin'){
     return (
       <div onClick={() => {props.onRecordSelection(props.recordId);}}>
         {recordInformation}
@@ -36,7 +36,10 @@ function Record(props) {
 Record.propTypes = {
   artist: PropTypes.string,
   title: PropTypes.string,
-  description: PropTypes.string
+  description: PropTypes.string,
+  currentRouterPath: PropTypes.string,
+  onRecordSelection: PropTypes.func, 
+  recordId: PropTypes.string,
 };
 
 export default Record;
