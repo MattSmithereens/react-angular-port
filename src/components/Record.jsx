@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Records(props) {
+function Record(props) {
+
+console.log(props);
+
 
   let divStyle = {
     fontFamily: 'sans-serif',
@@ -15,28 +18,28 @@ function Records(props) {
 
   const recordInformation =
     <div style={divStyle}>
-      <h3>{props.artist} - {props.title}</h3>
+      <h3><strong>{props.artist}</strong> - {props.title}</h3>
+      <p>{props.description}</p>
     </div>;
-  if (props.currentRouterPath === '/marketplace'){
-    return (
-      <div onClick={() => {props.onRecordSelection(props.recordId);}}>
-        {recordInformation}
-      </div>
-    );
-  } else {
+ 
     return (
       <div>
-        {recordInformation}
+        <div>
+          {recordInformation}
+        </div>
       </div>
     );
-  }
-}
+  } 
 
 
-Records.propTypes = {
+
+Record.propTypes = {
   artist: PropTypes.string,
   title: PropTypes.string,
-  description: PropTypes.string
+  description: PropTypes.string,
+  currentRouterPath: PropTypes.string,
+  onRecordSelection: PropTypes.func, 
+  recordId: PropTypes.string,
 };
 
-export default Records;
+export default Record;

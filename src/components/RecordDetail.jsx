@@ -5,8 +5,8 @@ function RecordDetail(props){
   return (
     <div>
       <hr/>
-      <h1>{props.selectedRecord.names} - {props.selectedRecord.location}</h1>
-      <h4><em>{props.selectedRecord.issue}</em></h4>
+      <h1>{props.selectedRecord.artist} - {props.selectedRecord.title}</h1>
+      <h4><em>{props.selectedRecord.description}</em></h4>
       <hr/>
     </div>
   );
