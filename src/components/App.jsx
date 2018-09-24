@@ -4,7 +4,6 @@ import Welcome from './Welcome';
 import RecordsList from './RecordsList';
 import About from './About';
 import AdminFooter from './AdminFooter';
-import Admin from './Admin';
 import { Switch, Route } from 'react-router-dom';
 import NewRecordControl from './NewRecordControl';
 import Error404 from './Error404';
@@ -22,25 +21,6 @@ class App extends React.Component {
     this.handleChangingSelectedRecord = this.handleChangingSelectedRecord.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.waitTimeUpdateTimer = setInterval(() =>
-  //     this.updateRecordElapsedWaitTime(),
-  //   60000
-  //   );
-  // }
-
-  // componentWillUnmount(){
-  //   clearInterval(this.waitTimeUpdateTimer);
-  // }
-
-  // updateRecordElapsedWaitTime() {
-  //   var newMasterRecordList = Object.assign({}, this.state.masterRecordList);
-  //   Object.keys(newMasterRecordList).forEach(recordId => {
-  //     newMasterRecordList[recordId].formattedWaitTime = (newMasterRecordList[recordId].timeOpen).fromNow(true);
-  //   });
-  //   this.setState({masterRecordList: newMasterRecordList});
-  // }
-
   handleAddingNewRecordToList(newRecord){
     var newRecordId = v4();
     var newMasterRecordList = Object.assign({}, this.state.masterRecordList, {
@@ -57,16 +37,20 @@ class App extends React.Component {
   render(){
     return (
       <div>
-        <Nav/>
-        <Switch>
-          <Route exact path='/' component={Welcome} />
-          <Route path='/about' component={About} />
-          <Route exact path='/marketplace' render={()=><RecordsList recordsList={this.state.masterRecordList} />} />
-          <Route path='/admin' render={()=><NewRecordControl onNewRecordCreation={this.handleAddingNewRecordToList} />} />
-          <Route path='/addnew' render={(props)=><Admin recordsList={this.state.masterRecordList} currentRouterPath={props.location.pathname} onRecordSelection={this.handleChangingSelectedRecord} selectedRecord={this.state.selectedRecord}/>} />
-          <Route component={Error404} />
-        </Switch>
-        <AdminFooter/>
+        <div>
+          <Nav/>
+          <Switch>
+            <Route exact path='/' component={Welcome} />
+            <Route path='/about' component={About} />
+            <Route exact path='/marketplace' render={()=><RecordsList recordsList={this.state.masterRecordList} />} />
+            <Route path='/admin' render={()=><NewRecordControl onNewRecordCreation={this.handleAddingNewRecordToList} />} />
+            <Route component={Error404} />
+          </Switch>
+          <br /><br />
+        </div>
+        <div>
+          <AdminFooter/>
+        </div>
       </div>
     );
   }

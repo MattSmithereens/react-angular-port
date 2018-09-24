@@ -10,7 +10,7 @@ function AdminFooter() {
     backgroundColor: '#9fc5db',
     position: 'fixed',
     bottom: '0',
-    height: '60px',
+    height: '25px',
     padding: '15px'
 
   };

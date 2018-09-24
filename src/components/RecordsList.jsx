@@ -12,18 +12,17 @@ function RecordsList(props) {
 
   return (
     <div style={recordsListStyle}>
-      <hr/>
       {Object.keys(props.recordsList).map(function(recordId) {
         var record = props.recordsList[recordId];
         return <Record artist={record.artist}
-          ltitle={record.title}
+          title={record.title}
           description={record.description}
           currentRouterPath={props.currentRouterPath}
           key={recordId}
           recordId={recordId}
           onRecordSelection={props.onRecordSelection}/>;
       })}
-    </div>
+    </div>  
   );
 }
 

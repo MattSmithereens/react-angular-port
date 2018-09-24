@@ -3,6 +3,9 @@ import PropTypes from 'prop-types';
 
 function Record(props) {
 
+console.log(props);
+
+
   let divStyle = {
     fontFamily: 'sans-serif',
     border: '1px solid grey',
@@ -15,22 +18,19 @@ function Record(props) {
 
   const recordInformation =
     <div style={divStyle}>
-      <h3>{props.artist} - {props.title}</h3>
+      <h3><strong>{props.artist}</strong> - {props.title}</h3>
+      <p>{props.description}</p>
     </div>;
-  if (props.currentRouterPath === '/admin'){
-    return (
-      <div onClick={() => {props.onRecordSelection(props.recordId);}}>
-        {recordInformation}
-      </div>
-    );
-  } else {
+ 
     return (
       <div>
-        {recordInformation}
+        <div>
+          {recordInformation}
+        </div>
       </div>
     );
-  }
-}
+  } 
+
 
 
 Record.propTypes = {
